@@ -1,0 +1,88 @@
+* {
+    margin:0;
+    padding:0;
+    user-select:none;
+    backface-visibility:  hidden;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color:  transparent;
+}
+
+html,body,#root {
+    background-color:#000;
+    color:#eff;
+    height:99%;
+}
+
+#root {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
+svg {
+    display:block;
+    margin:auto
+}
+
+.toggleHelp {
+    padding:.5ex;
+    font-size: 5vmin;
+    position:fixed;
+    top:0;
+    right:0;
+    background-color:#eff;
+    color:black;
+}
+
+#instructionsDIV {
+    max-width:30em;
+    margin:auto;
+}
+
+#instructionsDIV p {
+    font-size: 4vmin;
+    margin:1em;
+}
+
+#winnerDiv {
+    font-size:2em;
+    position:fixed;
+    color:red;
+    border:.5ex solid #666;
+    border-radius: 1ex;
+    background-color:#fcfcfc;
+    text-align:center;
+
+    /* transform doesn't work with older android browsers */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform:translate(-50%, -50%);
+    padding:1em;
+}
+
+#winnerDiv p {
+    margin-bottom:1em;
+}
+
+button {
+    font-size: .8em;
+  color:#444;
+  padding:.5ex;
+  background-color:#8f8;
+  border:.5ex outset;
+  border-color: #aaa #bbb #bbb #aaa;
+}
+
+@media screen and (orientation: landscape) {
+    svg {
+	height:99vh;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    svg {
+	width:99vw;
+    }
+}
+
