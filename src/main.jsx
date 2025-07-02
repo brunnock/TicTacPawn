@@ -6,7 +6,7 @@ import './style.css';
 
 function reducer(state2, action) {
 
-  let state = JSON.parse(JSON.stringify(state2)) 
+  let state = structuredClone(state2);
   
   const highlight = (row,col) => {
     state.board[row][col].highlighted=true;
@@ -285,7 +285,7 @@ function App () {
   } else {
 
     return (
-      <React.Fragment>
+      <>
 
 	<Board state={state} dispatch={dispatch} />
 
@@ -293,7 +293,7 @@ function App () {
 
         {showWinner ? <Winner /> : ''}
 
-      </React.Fragment>
+      </>
     )
   }
 }
